@@ -8,4 +8,8 @@ gem 'activesupport'
 gem 'sinatra-activerecord'
 gem 'sinatra-reloader'
 gem 'rake'
-gem 'unirest'
+gem 'twitter'
+
+group :test do
+  gem 'rspec'
+end

@@ -17,6 +17,10 @@ ActiveRecord::Schema.define(version: 20140817165652) do
   enable_extension "plpgsql"
 
   create_table "tweets", force: true do |t|
+    t.string   "tweet_id"
+    t.datetime "tweeted_at"
+    t.text     "tweet_text"
+    t.string   "phrases"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
