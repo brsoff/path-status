@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: path_status_development
+  pool: 8
+  username: <%= ENV['PG_USER'] %>
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: path_status_test
+  pool: 8
+  username: <%= ENV['PG_USER'] %>

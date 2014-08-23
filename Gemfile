@@ -10,6 +10,9 @@ gem 'sinatra-reloader'
 gem 'rake'
 gem 'twitter'
 
-group :test do
+group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec'
+  gem 'factory_girl', '~> 4.0'
+  gem 'ffaker'
 end

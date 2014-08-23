@@ -1,13 +1,15 @@
+require 'twitter'
 require 'sinatra'
 require 'sinatra/reloader'
-require 'active_record'
-require 'twitter'
+require 'sinatra/activerecord'
 
-require_relative 'config/environments'
+require_relative 'config/extensions'
 require_relative 'models/tweet'
 
 set :environment, :development
+set :server, 'webrick'
 
 get '/' do
+  @tweets = Tweet.all
   erb :index
 end
