@@ -15,9 +15,8 @@
 }
 
 body {
-  font-family: 'arial';
+  font-family: 'Roboto', sans-serif;
 }
-
 .inner {
   margin: 0 auto;
   width: 90%;
@@ -25,10 +24,27 @@ body {
     @include clearfix;
   }
   .feed {
-    border-left: 5px solid #000;
     float: left;
     padding: 20px;
     width: 65%;
+  }
+  .day {
+    .bar {
+      background-color: #9BD9F8;
+      height: 60px;
+      position: relative;
+      .count {
+        color: #000;
+        font-weight: bold;
+        font-size: 2em;
+        right: 12px;
+        position: absolute;
+        top: 12px;
+      }
+    }
+    .tweets {
+      display: none;
+    }
   }
   .stats {
     float: right;

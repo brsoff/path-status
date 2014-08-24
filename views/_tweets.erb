@@ -1,3 +1,10 @@
-<ul>
-  <%= partial :tweet, collection: timeline %>
-</ul>
+<div class="day">
+  <h3><%= date %></h3>
+
+  <div class="bar" style="width: <%= render_width_for(tweets, max) %>%;">
+    <div class="count"><%= tweets.size %></div>
+    <ul class="tweets">
+      <%= partial :tweet, collection: tweets %>
+    </ul>
+  </div>
+</div>

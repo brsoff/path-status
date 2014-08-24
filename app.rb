@@ -15,6 +15,6 @@ enable :partial_underscores
 
 get '/' do
   @timeline = Tweet.timeline(14)
-  @stats = Tweet.stats(@timeline)
+  @stats = Tweet.stats(@timeline).to_a
   erb :index
 end

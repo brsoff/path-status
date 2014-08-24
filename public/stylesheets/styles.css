@@ -7,10 +7,10 @@
 
 /* line 17, ../sass/styles.scss */
 body {
-  font-family: 'arial';
+  font-family: 'Roboto', sans-serif;
 }
 
-/* line 21, ../sass/styles.scss */
+/* line 20, ../sass/styles.scss */
 .inner {
   margin: 0 auto;
   width: 90%;
@@ -28,14 +28,32 @@ body {
 .inner .wrapper {
   *zoom: 1;
 }
-/* line 27, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 .inner .feed {
-  border-left: 5px solid #000;
   float: left;
   padding: 20px;
   width: 65%;
 }
-/* line 33, ../sass/styles.scss */
+/* line 32, ../sass/styles.scss */
+.inner .day .bar {
+  background-color: #9BD9F8;
+  height: 60px;
+  position: relative;
+}
+/* line 36, ../sass/styles.scss */
+.inner .day .bar .count {
+  color: #000;
+  font-weight: bold;
+  font-size: 2em;
+  right: 12px;
+  position: absolute;
+  top: 12px;
+}
+/* line 45, ../sass/styles.scss */
+.inner .day .tweets {
+  display: none;
+}
+/* line 49, ../sass/styles.scss */
 .inner .stats {
   float: right;
   padding: 20px;
