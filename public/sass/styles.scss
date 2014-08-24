@@ -21,13 +21,16 @@ body {
   margin: 0 auto;
   width: 90%;
   .wrapper {
+    margin: 40px 0;
     @include clearfix;
+  }
+  .main {
+    float: left;
+    width: 65%;
   }
   .feed {
     border-left: 1px solid #EBE8E8;
-    float: left;
     padding: 20px;
-    width: 65%;
   }
   .day {
     margin-bottom: 60px;
@@ -38,7 +41,7 @@ body {
       border: 1px solid #EBE8E8;
       border-radius: 3px;
       display: inline-block;
-      left: -21px;
+      left: -22px;
       margin: 0;
       padding: 3px 8px;
       position: absolute;
