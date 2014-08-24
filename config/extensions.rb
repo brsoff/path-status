@@ -1,5 +1,5 @@
 class Date
   def timeline_date
-    strftime("%d-%m-%y")
+    strftime("%A, %m/%e/%y")
   end
 end
