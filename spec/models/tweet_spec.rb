@@ -5,14 +5,12 @@ describe Tweet do
   let(:tweets) { create_list(:tweet, 3, tweeted_at: Time.now.beginning_of_day) }
 
   context "self.timeline" do
-    it "should return a hash" do
-      expect(Tweet.timeline(7)).to be_a Hash
-    end
-
     it "should return keys that correspond to specified days" do
-      expect(Tweet.timeline(7).keys).to include(Date.today.timeline_date)
-      expect(Tweet.timeline(7).keys).to include((Date.today - 6.days).timeline_date)
-      expect(Tweet.timeline(7).keys).not_to include((Date.today - 7.days).timeline_date)
+      timeline = Tweet.timeline(7)
+
+      expect(timeline.keys).to include(Date.today.timeline_date)
+      expect(timeline.keys).to include((Date.today - 6.days).timeline_date)
+      expect(timeline.keys).not_to include((Date.today - 7.days).timeline_date)
     end
 
     it "should return values as array of tweets with phrases tweeted on that day" do
@@ -23,9 +21,29 @@ describe Tweet do
       tweets.third.tweeted_at = 3.days.ago
       tweets.third.save!
 
-      expect(Tweet.timeline(7)[tweets.first.tweeted_at.to_date.timeline_date]).not_to include(tweets.first)
-      expect(Tweet.timeline(7)[tweets.second.tweeted_at.to_date.timeline_date]).to eq(nil)
-      expect(Tweet.timeline(7)[tweets.third.tweeted_at.to_date.timeline_date]).to include(tweets.third)
+      timeline = Tweet.timeline(7)
+
+      expect(timeline[tweets.first.tweeted_at.to_date.timeline_date]).not_to include(tweets.first)
+      expect(timeline[tweets.second.tweeted_at.to_date.timeline_date]).to eq(nil)
+      expect(timeline[tweets.third.tweeted_at.to_date.timeline_date]).to include(tweets.third)
+    end
+  end
+
+  context "self.stats" do
+    it "should return hash of PHRASES with usage frequency" do
+      tweets.first.phrases = 'signal problem, delay, signal construction'
+      tweets.second.phrases = 'delay, police activity'
+      tweets.third.phrases = 'signal construction, delay'
+
+      tweets.each { |tweet| tweet.save! }
+
+      timeline = Tweet.timeline(7)
+      stats = Tweet.stats(timeline)
+
+      expect(stats['signal problem']).to eq(1)
+      expect(stats['delay']).to eq(3)
+      expect(stats['signal construction']).to eq(2)
+      expect(stats['track condition']).to eq(0)
     end
   end
 
