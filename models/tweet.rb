@@ -13,6 +13,8 @@ class Tweet < ActiveRecord::Base
     'police activity',
     'car equipment problem',
     'station closed',
+    'apologize',
+    'sorry'
   ]
 
   def self.timeline(num_days)
@@ -46,7 +48,7 @@ private
 
   def record_phrases
     self.phrases = ''
-    PHRASES.each { |p| self.phrases += "#{ p }, "  if tweet_text.include?(p) }
+    PHRASES.each { |p| self.phrases += "#{ p }, "  if tweet_text.downcase.include?(p) }
     self.phrases = phrases.present? ? phrases.gsub(/,\s$/, '') : nil
   end
 end
