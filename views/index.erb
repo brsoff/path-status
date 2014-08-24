@@ -1,15 +1,17 @@
 <section class="main">
-  <h1>testing</h1>
+  <h1>PATH status</h1>
 
   <section class="feed">
     <%= partial :day, collection: @timeline, locals: { max: max_phrases_for(@timeline) } %>
   </section>
 </section>
 
-<section class="stats">
-  <h2>The past <%= days_in(@timeline) %> days:</h2>
+<section class="sidebar">
+  <section class="stats">
+    <h2>The past <%= days_in(@timeline) %> days:</h2>
 
-   <table>
-    <%= partial :stat, collection: @stats %>
-  </table>
+     <table>
+      <%= partial :stat, collection: @stats %>
+    </table>
+  </section>
 </section>

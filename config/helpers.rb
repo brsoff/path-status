@@ -18,4 +18,12 @@ helpers do
   def render_width_for(tweets, max)
     (tweets.size.to_f / max.to_f) * 100
   end
+
+  def tweet_link_for(id)
+    "http://twitter.com/pathalerts/status/#{ id }"
+  end
+
+  def render_date_class_for(date)
+    'weekend'  if date.match('Saturday|Sunday')
+  end
 end
