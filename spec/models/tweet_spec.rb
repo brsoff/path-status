@@ -41,7 +41,7 @@ describe Tweet do
       subject.tweet_text = "Due to a signal problem, all PATH train service has been suspended."
       subject.save!
 
-      expect(subject.phrases).to eq("has been suspended,signal problem")
+      expect(subject.phrases).to eq("suspended, signal problem")
     end
 
     it "should save as nil if no phrases are detected" do

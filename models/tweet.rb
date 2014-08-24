@@ -2,19 +2,17 @@ class Tweet < ActiveRecord::Base
   before_create :record_phrases
 
   PHRASES = [
-    'has been suspended',
+    'suspended',
     'signal problem',
+    'signal failure',
     'signal construction',
     'track condition',
-    'is suspended',
     'delay',
     'cash purchases only',
     'no credit/debit',
     'police activity',
-    'operating with a delay',
     'car equipment problem',
     'station closed',
-    'subject to a'
   ]
 
   def self.timeline(num_days)
@@ -22,8 +20,9 @@ class Tweet < ActiveRecord::Base
     tweets = Tweet.where(tweeted_at: date_range)
 
     timeline = {}
+    reversed_days = (date_range.first.to_date..date_range.last.to_date).to_a.reverse
 
-    (date_range.first.to_date..date_range.last.to_date).each { |day|
+    reversed_days.each { |day|
       timeline[day.timeline_date] = tweets.select { |tweet|
         tweet.tweeted_at.localtime.to_date.timeline_date == day.timeline_date && tweet.phrases.present?
       }
@@ -32,12 +31,22 @@ class Tweet < ActiveRecord::Base
     timeline
   end
 
+  def self.stats(timeline)
+    phrases = timeline.map { |day, tweets|
+      tweets.map { |tweet| tweet.phrases }.flatten
+    }.flatten.join(', ')
+
+    PHRASES.each_with_object(Hash.new) { |phrase, hash|
+      hash[phrase] = phrases.scan(/#{ Regexp.quote(phrase) }/).size
+    }
+  end
+
 
 private
 
   def record_phrases
     self.phrases = ''
-    PHRASES.each { |p| self.phrases += "#{ p },"  if tweet_text.include?(p) }
-    self.phrases = phrases.present? ? phrases.gsub(/,$/, '') : nil
+    PHRASES.each { |p| self.phrases += "#{ p }, "  if tweet_text.include?(p) }
+    self.phrases = phrases.present? ? phrases.gsub(/,\s$/, '') : nil
   end
 end
