@@ -38,9 +38,11 @@ class Tweet < ActiveRecord::Base
       tweets.map { |tweet| tweet.phrases }.flatten
     }.flatten.join(', ')
 
-    PHRASES.each_with_object(Hash.new) { |phrase, hash|
+    frequency = PHRASES.each_with_object(Hash.new) { |phrase, hash|
       hash[phrase] = phrases.scan(/#{ Regexp.quote(phrase) }/).size
     }
+
+    Hash[frequency.sort_by { |phrase, count| count }.reverse]
   end
 
 
