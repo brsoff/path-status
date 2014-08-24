@@ -2,14 +2,18 @@ require 'twitter'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
+require 'sinatra/partial'
 
 require_relative 'config/extensions'
+require_relative 'config/helpers'
 require_relative 'models/tweet'
 
 set :environment, :development
 set :server, 'webrick'
+set :partial_template_engine, :erb
+enable :partial_underscores
 
 get '/' do
-  @tweets = Tweet.all
+  @timeline = Tweet.timeline(7)
   erb :index
 end
