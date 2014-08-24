@@ -2,7 +2,7 @@
   <h3 class="<%= render_date_class_for(date) %>"><%= date %></h3>
 
   <div class="bar" style="width: <%= render_width_for(tweets, max) %>%;" data-behavior="show-tweets">
-    <div class="count"><%= tweets.size %></div>
+    <div class="count"><%= count_phrases_in(tweets) %></div>
   </div>
 
   <div class="tweets">

@@ -37,7 +37,7 @@ var app = {
         tweets.hide('fast')
       } else {
         tweets.show('fast');
-        $('html, body').animate({ scrollTop: $(this).offset().top - 40 }, 'fast');
+        $('html, body').animate({ scrollTop: $(this).offset().top - 165 }, 'fast');
       }
     });
   }

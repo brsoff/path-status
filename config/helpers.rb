@@ -26,4 +26,12 @@ helpers do
   def render_date_class_for(date)
     'weekend'  if date.match('Saturday|Sunday')
   end
+
+  def count_phrases_in(tweets)
+    tweets.map { |tweet| tweet.phrases }.join(', ').split(', ').size
+  end
+
+  def render_total_stats_for(stats)
+    stats.map { |s| s.second }.sum
+  end
 end

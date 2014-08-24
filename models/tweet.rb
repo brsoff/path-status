@@ -7,12 +7,15 @@ class Tweet < ActiveRecord::Base
     'signal failure',
     'signal construction',
     'track condition',
+    'track problem',
     'delay',
     'cash purchases only',
     'no credit/debit',
     'police activity',
     'car equipment problem',
     'station closed',
+    'min schedule',
+    'minute schedule',
     'apologize',
     'sorry'
   ]
