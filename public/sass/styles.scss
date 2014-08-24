@@ -24,26 +24,71 @@ body {
     @include clearfix;
   }
   .feed {
+    border-left: 1px solid #EBE8E8;
     float: left;
     padding: 20px;
     width: 65%;
   }
   .day {
+    margin-bottom: 60px;
+    position: relative;
+    @include clearfix;
+    h3 {
+      background-color: #fff;
+      border: 1px solid #EBE8E8;
+      border-radius: 3px;
+      display: inline-block;
+      left: -21px;
+      margin: 0;
+      padding: 3px 8px;
+      position: absolute;
+      top: -20px;
+      z-index: 999;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+    }
     .bar {
       background-color: #9BD9F8;
-      height: 60px;
+      cursor: pointer;
+      height: 40px;
       position: relative;
+      &:hover {
+        background-color: #59C2F5;
+      }
       .count {
-        color: #000;
+        background-color: #E82C0C;
+        border-radius: 50%;
+        color: #fff;
         font-weight: bold;
-        font-size: 2em;
-        right: 12px;
+        font-size: 1.3em;
+        height: 35px;
+        line-height: 30px;
+        padding: 3px;
         position: absolute;
-        top: 12px;
+        right: -10px;
+        text-align: center;
+        bottom: -10px;
+        width: 35px;
+        z-index: 9999;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
       }
     }
     .tweets {
+      background-color: #fff;
+      border: 1px solid #9BD9F8;
       display: none;
+      padding: 10px;
+      z-index: 999;
+      li {
+        margin-bottom: 5px;
+      }
+      .tweet {
+        list-style-type: square;
+        li {
+          margin-bottom: 25px;
+        }
+      }
     }
   }
   .stats {

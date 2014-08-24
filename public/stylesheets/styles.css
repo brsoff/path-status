@@ -30,30 +30,95 @@ body {
 }
 /* line 26, ../sass/styles.scss */
 .inner .feed {
+  border-left: 1px solid #EBE8E8;
   float: left;
   padding: 20px;
   width: 65%;
 }
 /* line 32, ../sass/styles.scss */
-.inner .day .bar {
-  background-color: #9BD9F8;
-  height: 60px;
+.inner .day {
+  margin-bottom: 60px;
   position: relative;
 }
+/* line 3, ../sass/styles.scss */
+.inner .day:before, .inner .day:after {
+  content: "";
+  display: table;
+}
+/* line 7, ../sass/styles.scss */
+.inner .day:after {
+  clear: both;
+}
+/* line 8, ../sass/styles.scss */
+.inner .day {
+  *zoom: 1;
+}
 /* line 36, ../sass/styles.scss */
-.inner .day .bar .count {
-  color: #000;
-  font-weight: bold;
-  font-size: 2em;
-  right: 12px;
+.inner .day h3 {
+  background-color: #fff;
+  border: 1px solid #EBE8E8;
+  border-radius: 3px;
+  display: inline-block;
+  left: -21px;
+  margin: 0;
+  padding: 3px 8px;
   position: absolute;
-  top: 12px;
+  top: -20px;
+  z-index: 999;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
-/* line 45, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
+.inner .day .bar {
+  background-color: #9BD9F8;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+}
+/* line 55, ../sass/styles.scss */
+.inner .day .bar:hover {
+  background-color: #59C2F5;
+}
+/* line 58, ../sass/styles.scss */
+.inner .day .bar .count {
+  background-color: #E82C0C;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3em;
+  height: 35px;
+  line-height: 30px;
+  padding: 3px;
+  position: absolute;
+  right: -10px;
+  text-align: center;
+  bottom: -10px;
+  width: 35px;
+  z-index: 9999;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+/* line 77, ../sass/styles.scss */
 .inner .day .tweets {
+  background-color: #fff;
+  border: 1px solid #9BD9F8;
   display: none;
+  padding: 10px;
+  z-index: 999;
 }
-/* line 49, ../sass/styles.scss */
+/* line 83, ../sass/styles.scss */
+.inner .day .tweets li {
+  margin-bottom: 5px;
+}
+/* line 86, ../sass/styles.scss */
+.inner .day .tweets .tweet {
+  list-style-type: square;
+}
+/* line 88, ../sass/styles.scss */
+.inner .day .tweets .tweet li {
+  margin-bottom: 25px;
+}
+/* line 94, ../sass/styles.scss */
 .inner .stats {
   float: right;
   padding: 20px;

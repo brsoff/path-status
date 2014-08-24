@@ -1,1 +1,4 @@
-<li><%= tweet.tweeted_at.localtime.strftime('%l:%M %P') %> - <%= tweet.phrases%></li>
+<li><%= tweet.tweeted_at.localtime.strftime('%l:%M%P') %>: "<%= tweet.phrases %>"</li>
+  <ul class="tweet">
+    <li>"<%= tweet.tweet_text %>"</li>
+  </ul>
