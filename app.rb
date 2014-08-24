@@ -14,7 +14,10 @@ set :partial_template_engine, :erb
 enable :partial_underscores
 
 get '/' do
-  @timeline = Tweet.timeline(14)
+  days = params[:days] || 7
+
+  @timeline = Tweet.timeline(days.to_i)
   @stats = Tweet.stats(@timeline).to_a
-  erb :index
+
+  params[:days] ? (erb :index, layout: false) : (erb :index)
 end

@@ -18,8 +18,14 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0 0 10px 0;
+}
+
 h1 {
-  font-size: 1.8em;
+  font-size: 2.2em;
 }
 
 a {
@@ -29,6 +35,21 @@ a {
     color: #2BB1F1;
   }
 }
+
+header {
+  background-color: #fff;
+  height: 100px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  .inner {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
 .inner {
   margin: 0 auto;
   width: 90%;
@@ -38,12 +59,14 @@ a {
   }
   .main {
     float: left;
+    margin-top: 100px;
     width: 65%;
   }
   .feed {
     border: 1px solid #EBE8E8;
     border-bottom: 0;
-    padding: 20px 0;
+    border-top: 0;
+    padding: 20px 20px 20px 0;
   }
   .day {
     margin-bottom: 60px;
@@ -88,7 +111,7 @@ a {
         text-align: center;
         bottom: -10px;
         width: 35px;
-        z-index: 9999;
+        z-index: 9998;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
       }
@@ -115,7 +138,7 @@ a {
     float: right;
     width: 30%;
     @include clearfix;
-    .stats {
+    .fixed {
       position: fixed;
       top: 105px;
       h2 {
@@ -133,5 +156,12 @@ a {
         padding-left: 15px;
       }
     }
+    .stats {
+      margin-bottom: 30px;
+    }
   }
+}
+
+.dummy {
+  display: none;
 }

@@ -10,27 +10,50 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 21, ../sass/styles.scss */
-h1 {
-  font-size: 1.8em;
+/* line 23, ../sass/styles.scss */
+h1,
+h2,
+h3 {
+  margin: 0 0 10px 0;
 }
 
-/* line 25, ../sass/styles.scss */
+/* line 27, ../sass/styles.scss */
+h1 {
+  font-size: 2.2em;
+}
+
+/* line 31, ../sass/styles.scss */
 a {
   color: #0AA4F0;
   text-decoration: none;
 }
-/* line 28, ../sass/styles.scss */
+/* line 34, ../sass/styles.scss */
 a:hover {
   color: #2BB1F1;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 39, ../sass/styles.scss */
+header {
+  background-color: #fff;
+  height: 100px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+/* line 47, ../sass/styles.scss */
+header .inner {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* line 53, ../sass/styles.scss */
 .inner {
   margin: 0 auto;
   width: 90%;
 }
-/* line 35, ../sass/styles.scss */
+/* line 56, ../sass/styles.scss */
 .inner .wrapper {
   margin: 40px 0;
 }
@@ -47,18 +70,20 @@ a:hover {
 .inner .wrapper {
   *zoom: 1;
 }
-/* line 39, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 .inner .main {
   float: left;
+  margin-top: 100px;
   width: 65%;
 }
-/* line 43, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .inner .feed {
   border: 1px solid #EBE8E8;
   border-bottom: 0;
-  padding: 20px 0;
+  border-top: 0;
+  padding: 20px 20px 20px 0;
 }
-/* line 48, ../sass/styles.scss */
+/* line 71, ../sass/styles.scss */
 .inner .day {
   margin-bottom: 60px;
   position: relative;
@@ -76,7 +101,7 @@ a:hover {
 .inner .day {
   *zoom: 1;
 }
-/* line 52, ../sass/styles.scss */
+/* line 75, ../sass/styles.scss */
 .inner .day h3 {
   background-color: #fff;
   border: 1px solid #EBE8E8;
@@ -91,22 +116,22 @@ a:hover {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-/* line 65, ../sass/styles.scss */
+/* line 88, ../sass/styles.scss */
 .inner .day h3.weekend {
   background-color: #EFEDED;
 }
-/* line 69, ../sass/styles.scss */
+/* line 92, ../sass/styles.scss */
 .inner .day .bar {
   background-color: #9BD9F8;
   cursor: pointer;
   height: 40px;
   position: relative;
 }
-/* line 74, ../sass/styles.scss */
+/* line 97, ../sass/styles.scss */
 .inner .day .bar:hover {
   background-color: #59C2F5;
 }
-/* line 77, ../sass/styles.scss */
+/* line 100, ../sass/styles.scss */
 .inner .day .bar .count {
   background-color: #ff5123;
   border-radius: 50%;
@@ -121,11 +146,11 @@ a:hover {
   text-align: center;
   bottom: -10px;
   width: 35px;
-  z-index: 9999;
+  z-index: 9998;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-/* line 96, ../sass/styles.scss */
+/* line 119, ../sass/styles.scss */
 .inner .day .tweets {
   background-color: #fff;
   border: 1px solid #9BD9F8;
@@ -134,19 +159,19 @@ a:hover {
   padding: 10px;
   z-index: 999;
 }
-/* line 103, ../sass/styles.scss */
+/* line 126, ../sass/styles.scss */
 .inner .day .tweets li {
   margin-bottom: 5px;
 }
-/* line 106, ../sass/styles.scss */
+/* line 129, ../sass/styles.scss */
 .inner .day .tweets .tweet {
   list-style-type: square;
 }
-/* line 108, ../sass/styles.scss */
+/* line 131, ../sass/styles.scss */
 .inner .day .tweets .tweet li {
   margin-bottom: 25px;
 }
-/* line 114, ../sass/styles.scss */
+/* line 137, ../sass/styles.scss */
 .inner .sidebar {
   float: right;
   width: 30%;
@@ -164,26 +189,35 @@ a:hover {
 .inner .sidebar {
   *zoom: 1;
 }
-/* line 118, ../sass/styles.scss */
-.inner .sidebar .stats {
+/* line 141, ../sass/styles.scss */
+.inner .sidebar .fixed {
   position: fixed;
   top: 105px;
 }
-/* line 121, ../sass/styles.scss */
-.inner .sidebar .stats h2 {
+/* line 144, ../sass/styles.scss */
+.inner .sidebar .fixed h2 {
   margin-top: 0;
 }
-/* line 124, ../sass/styles.scss */
-.inner .sidebar .stats table {
+/* line 147, ../sass/styles.scss */
+.inner .sidebar .fixed table {
   font-size: 1.2em;
 }
-/* line 126, ../sass/styles.scss */
-.inner .sidebar .stats table td {
+/* line 149, ../sass/styles.scss */
+.inner .sidebar .fixed table td {
   padding-bottom: 5px;
   vertical-align: bottom;
 }
-/* line 131, ../sass/styles.scss */
-.inner .sidebar .stats .frequency {
+/* line 154, ../sass/styles.scss */
+.inner .sidebar .fixed .frequency {
   font-size: 1.4em;
   padding-left: 15px;
+}
+/* line 159, ../sass/styles.scss */
+.inner .sidebar .stats {
+  margin-bottom: 30px;
+}
+
+/* line 165, ../sass/styles.scss */
+.dummy {
+  display: none;
 }
