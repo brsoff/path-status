@@ -25,7 +25,7 @@ class Tweet < ActiveRecord::Base
 
     (date_range.first.to_date..date_range.last.to_date).each { |day|
       timeline[day.timeline_date] = tweets.select { |tweet|
-        tweet.tweeted_at.to_date.timeline_date == day.timeline_date
+        tweet.tweeted_at.localtime.to_date.timeline_date == day.timeline_date && tweet.phrases.present?
       }
     }
 
