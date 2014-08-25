@@ -124,9 +124,6 @@ header {
       position: absolute;
       top: -2px;
       z-index: 999;
-      &.weekend {
-        // color: #6E6E6E;
-      }
     }
     .bar {
       background-color: $darkblue;
@@ -135,6 +132,9 @@ header {
       position: relative;
       &:hover {
         background-color: $lightblue;
+      }
+      &.weekend {
+        background-color: #f1c40f;
       }
       .node {
         background-color: $white;

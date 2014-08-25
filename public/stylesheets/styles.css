@@ -152,16 +152,20 @@ header .inner p {
   top: -2px;
   z-index: 999;
 }
-/* line 131, ../sass/styles.scss */
+/* line 128, ../sass/styles.scss */
 .inner .day .bar {
   background-color: #2980b9;
   cursor: pointer;
   height: 10px;
   position: relative;
 }
-/* line 136, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 .inner .day .bar:hover {
   background-color: #3498db;
+}
+/* line 136, ../sass/styles.scss */
+.inner .day .bar.weekend {
+  background-color: #f1c40f;
 }
 /* line 139, ../sass/styles.scss */
 .inner .day .bar .node {
