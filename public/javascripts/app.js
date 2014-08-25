@@ -1,12 +1,13 @@
 var app = {
-  initialize: function () {
+  bind: function () {
     app.bindTweets();
-    app.daysListener();
-    app.filterPhrase();
-    app.bindUnfilter();
+    app.dateSelect();
+    app.filterByPhrase();
+    app.unfilter();
+    app.nodes();
   },
 
-  daysListener: function () {
+  dateSelect: function () {
     $('*[data-target="days"]').on('change', function () {
       var selected = { days: $(this).val() };
 
@@ -25,9 +26,7 @@ var app = {
 
           $('.dummy').empty();
 
-          app.bindTweets();
-          app.filterPhrase();
-          app.bindUnfilter();
+          app.bind();
         }
       });
     });
@@ -46,7 +45,7 @@ var app = {
     });
   },
 
-  filterPhrase: function () {
+  filterByPhrase: function () {
     $('*[data-behavior="filter-phrase"]').on('click', function () {
       var phrase = $(this).text();
 
@@ -66,16 +65,27 @@ var app = {
     });
   },
 
-  bindUnfilter: function () {
+  unfilter: function () {
     $('*[data-behavior="unfilter"]').on('click', function () {
       $('.messages').hide().find('.message').empty();
       $('.day').show();
       $('.tweet-details').show();
       $('.tweets').hide();
     });
+  },
+
+  nodes: function () {
+    $('*[data-target="node"]').hover(function () {
+      var node_id = $(this).index();
+      var tweet = $(this).closest('.bar').closest('.day').find('.tweet-details')[node_id].innerHTML;
+
+      $(this).find('.node-hover').html(tweet).show();
+    }, function () {
+      $(this).find('.node-hover').empty().hide();
+    })
   }
 }
 
 $(function () {
-  app.initialize();
+  app.bind();
 })

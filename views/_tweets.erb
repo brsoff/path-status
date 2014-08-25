@@ -4,7 +4,7 @@
   <div class="bar <%= render_date_class_for(date) %>" style="width: <%= render_width_for(tweets, max) %>%;" data-behavior="show-tweets">
     <%= partial :nodes, locals: { count: tweets.size, max: max } %>
 
-    <div class="count <%= render_no_phrases_class_for(tweets) %>"><%= tweets.size %></div>
+    <div class="count <%= render_no_phrases_class_for(tweets) %>"><%= count_phrases_in(tweets) %></div>
   </div>
 
   <div class="tweets">
