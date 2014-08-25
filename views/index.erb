@@ -2,8 +2,6 @@
 
 <section class="main">
   <section class="feed">
-    <%= partial :messages %>
-
     <%= partial :day, collection: @timeline, locals: { max: max_phrases_for(@timeline) } %>
   </section>
 </section>

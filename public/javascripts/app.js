@@ -71,6 +71,7 @@ var app = {
       $('.messages').hide().find('.message').empty();
       $('.day').show();
       $('.tweet-details').show();
+      $('.tweets').hide();
     });
   }
 }

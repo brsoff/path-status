@@ -60,8 +60,31 @@ header {
     max-width: 1140px;
     padding: 20px 0;
     width: 80%;
+    .explanation {
+      position: relative;
+      width: 65%;
+      .messages {
+        background: #f7f7f7;
+        border: 1px solid $lightgrey;
+        bottom: -30px;
+        display: none;
+        padding: 4px 10px;
+        position: absolute;
+        right: -42px;
+        z-index: 10000;
+        .unfilter {
+          color: $darkblue;
+          cursor: pointer;
+          &:hover {
+            color: $lightblue;
+          }
+        }
+      }
+    }
     p {
-      width: 400px;
+      line-height: 1.5em;
+      margin-bottom: 0;
+      width: 90%;
     }
   }
 }
@@ -80,26 +103,13 @@ header {
     width: 65%;
   }
   .feed {
-    border-left: 1px solid $lightgrey;
-    padding: 20px 20px 20px 0;
+    background-color: #f7f7f7;
+    border: 1px solid $lightgrey;
+    border-radius: 3px;
+    padding: 18px 0 20px 0;
     position: relative;
-    .messages {
-      background: #f7f7f7;
-      border: 1px solid $lightgrey;
-      display: none;
-      padding: 4px 10px;
-      position: absolute;
-      right: 0;
-      top: -20px;
-      z-index: 10000;
-      .unfilter {
-        color: $darkblue;
-        cursor: pointer;
-        &:hover {
-          color: $lightblue;
-        }
-      }
-    }
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
   }
   .day {
     margin-bottom: 40px;
@@ -107,7 +117,8 @@ header {
     @include clearfix;
     h3 {
       background-color: $white;
-      border: 1px solid $lightgrey;
+      // border: 1px solid $lightgrey;
+      border: 1px solid #ccc;
       border-radius: 3px;
       display: inline-block;
       font-size: 1em;
@@ -174,8 +185,6 @@ header {
     width: 30%;
     @include clearfix;
     .fixed {
-      border-left: 1px solid $lightgrey;
-      padding-left: 40px;
       position: fixed;
       top: 135px;
       h2 {
