@@ -1,3 +1,11 @@
+$darkblue: #2980b9;
+$lightblue: #3498db;
+$lightgrey: #EBE8E8;
+$white: #ffffff;
+$black: #000000;
+$red: #e74c3c;
+$green: #1abc9c;
+
 @mixin clearfix {
   &:before,
   &:after {
@@ -15,32 +23,32 @@
 }
 
 body {
-  // font-family: 'Roboto', sans-serif;
   font-family: 'arial';
-  font-size: .9em;
+  font-size: .8em;
 }
 
 h1,
 h2,
-h3 {
+h3,
+p {
   margin: 0 0 10px 0;
 }
 
 h1 {
   font-size: 2em;
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 
 a {
-  color: #0AA4F0;
+  color: $darkblue;
   text-decoration: none;
   &:hover {
-    color: #2BB1F1;
+    color: $lightblue;
   }
 }
 
 header {
-  background-color: #fff;
+  background-color: $white;
   height: 138px;
   left: 0;
   position: fixed;
@@ -52,6 +60,9 @@ header {
     max-width: 1140px;
     padding: 20px 0;
     width: 80%;
+    p {
+      width: 400px;
+    }
   }
 }
 
@@ -69,14 +80,12 @@ header {
     width: 65%;
   }
   .feed {
-    border: 1px solid #EBE8E8;
-    border-bottom: 0;
-    border-top: 0;
+    border-left: 1px solid $lightgrey;
     padding: 20px 20px 20px 0;
     position: relative;
     .messages {
       background: #f7f7f7;
-      border: 1px solid #EBE8E8;
+      border: 1px solid $lightgrey;
       display: none;
       padding: 4px 10px;
       position: absolute;
@@ -84,10 +93,10 @@ header {
       top: -20px;
       z-index: 10000;
       .unfilter {
-        color: #0AA4F0;
+        color: $darkblue;
         cursor: pointer;
         &:hover {
-          opacity: .7;
+          color: $lightblue;
         }
       }
     }
@@ -97,8 +106,8 @@ header {
     position: relative;
     @include clearfix;
     h3 {
-      background-color: #fff;
-      border: 1px solid #EBE8E8;
+      background-color: $white;
+      border: 1px solid $lightgrey;
       border-radius: 3px;
       display: inline-block;
       font-size: 1em;
@@ -115,17 +124,17 @@ header {
       }
     }
     .bar {
-      background-color: #9BD9F8;
+      background-color: $darkblue;
       cursor: pointer;
       height: 20px;
       position: relative;
       &:hover {
-        background-color: #59C2F5;
+        background-color: $lightblue;
       }
       .count {
-        background-color: #ff5123;
+        background-color: $red;
         border-radius: 50%;
-        color: #fff;
+        color: $white;
         font-weight: bold;
         height: 30px;
         line-height: 24px;
@@ -138,11 +147,14 @@ header {
         z-index: 9998;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        &.no-phrases {
+          background-color: $green;
+        }
       }
     }
     .tweets {
-      background-color: #fff;
-      border: 1px solid #9BD9F8;
+      background-color: $white;
+      border: 1px solid $darkblue;
       display: none;
       padding: 10px;
       z-index: 999;
@@ -162,7 +174,8 @@ header {
     width: 30%;
     @include clearfix;
     .fixed {
-      padding: 20px 40px;
+      border-left: 1px solid $lightgrey;
+      padding-left: 40px;
       position: fixed;
       top: 135px;
       h2 {
@@ -170,24 +183,28 @@ header {
       }
       table {
         td {
-          // padding-bottom: 5px;
+          padding-bottom: 3px;
           vertical-align: bottom;
           &.phrase {
-            color: #0AA4F0;
+            color: $darkblue;
             cursor: pointer;
-            font-size: .9em;
+            font-size: .8em;
             &:hover {
-              opacity: .7;
+              color: $lightblue;
             }
             &.total-label {
-              font-size: 1.4em;
+              color: $black;
+              cursor: arrow;
+              font-size: 1.1em;
+              padding-top: 10px;
             }
           }
           &.frequency {
-            font-size: 1.2em;
+            font-size: .9em;
+            font-weight: bold;
             padding-left: 15px;
             &.total {
-              font-size: 1.4em;
+              font-size: 1.1em;
             }
           }
         }

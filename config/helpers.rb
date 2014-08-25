@@ -1,10 +1,6 @@
 helpers do
   def render_day_for(day, max)
-    date = day.first
-    tweets = day.second
-
-    p = tweets.empty? ? :no_tweets : :tweets
-    partial p, locals: { date: date, tweets: tweets, max: max }
+    partial :tweets, locals: { date: day.first, tweets: day.second, max: max }
   end
 
   def max_phrases_for(timeline)
@@ -33,5 +29,9 @@ helpers do
 
   def render_total_stats_for(stats)
     stats.map { |s| s.second }.sum
+  end
+
+  def render_no_phrases_class_for(tweets)
+    'no-phrases'  if tweets.size == 0
   end
 end

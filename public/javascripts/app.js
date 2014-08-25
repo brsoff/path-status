@@ -26,6 +26,8 @@ var app = {
           $('.dummy').empty();
 
           app.bindTweets();
+          app.filterPhrase();
+          app.bindUnfilter();
         }
       });
     });
