@@ -20,7 +20,7 @@ helpers do
   end
 
   def render_date_class_for(date)
-    'weekend'  if date.match('Saturday|Sunday')
+    'weekend'  if date.match('Sat|Sun')
   end
 
   def count_phrases_in(tweets)
@@ -33,5 +33,9 @@ helpers do
 
   def render_no_phrases_class_for(tweets)
     'no-phrases'  if tweets.size == 0
+  end
+
+  def node_position_for(node, count)
+    node.to_f / count.to_f * 100
   end
 end
