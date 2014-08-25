@@ -49,14 +49,16 @@ header {
   z-index: 9999;
   .inner {
     margin: 0 auto;
+    max-width: 1140px;
     padding: 20px 0;
-    width: 90%;
+    width: 80%;
   }
 }
 
 .inner {
   margin: 0 auto;
-  width: 90%;
+  max-width: 1140px;
+  width: 80%;
   .wrapper {
     margin: 40px 0;
     @include clearfix;
@@ -71,9 +73,27 @@ header {
     border-bottom: 0;
     border-top: 0;
     padding: 20px 20px 20px 0;
+    position: relative;
+    .messages {
+      background: #f7f7f7;
+      border: 1px solid #EBE8E8;
+      display: none;
+      padding: 4px 10px;
+      position: absolute;
+      right: 0;
+      top: -20px;
+      z-index: 10000;
+      .unfilter {
+        color: #0AA4F0;
+        cursor: pointer;
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
   }
   .day {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     position: relative;
     @include clearfix;
     h3 {
@@ -142,6 +162,7 @@ header {
     width: 30%;
     @include clearfix;
     .fixed {
+      padding: 20px 40px;
       position: fixed;
       top: 135px;
       h2 {
@@ -152,7 +173,12 @@ header {
           // padding-bottom: 5px;
           vertical-align: bottom;
           &.phrase {
+            color: #0AA4F0;
+            cursor: pointer;
             font-size: .9em;
+            &:hover {
+              opacity: .7;
+            }
             &.total-label {
               font-size: 1.4em;
             }

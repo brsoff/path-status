@@ -48,6 +48,12 @@ class Tweet < ActiveRecord::Base
     Hash[frequency.sort_by { |phrase, count| count }.reverse]
   end
 
+  def self.by_phrase_in(timeline, phrase)
+    timeline.map { |date, tweets|
+      tweets.keep_if { |tweet| tweet.phrases.include?(phrase) }
+    }
+  end
+
 
 private
 
