@@ -27,6 +27,7 @@ var app = {
           $('.dummy').empty();
 
           app.flashTimelineMessage();
+          $('.node').removeClass('inactive');
 
           app.bind();
         }
@@ -52,7 +53,7 @@ var app = {
 
     $('.messages').find('.message').text('Timeline updated');
     $('.messages').fadeIn(200, function () {
-      setTimeout(function () { $('.messages').fadeOut(200); }, 2000);
+      setTimeout(function () { $('.messages').fadeOut(300); }, 2000);
     });
   },
 
@@ -79,9 +80,16 @@ var app = {
 
       $('.day').hide();
       $('.tweet-details').hide();
+      $('.node').addClass('inactive');
 
       for (var i = 0; i < tweets.length; i++) {
         $(tweets[i]).closest('.day').show();
+
+        var position = $(tweets[i]).closest('.tweet-details').data('position');
+
+        var node = $(tweets[i]).closest('.day').find('.bar').find('.node')[position - 1];
+        $(node).removeClass('inactive');
+
         $(tweets[i]).closest('.day .tweets').show();
         $(tweets[i]).closest('.tweet-details').show();
       }
@@ -98,6 +106,7 @@ var app = {
       $('.day').show();
       $('.tweet-details').show();
       $('.tweets').hide();
+      $('.node').removeClass('inactive');
     });
   },
 
