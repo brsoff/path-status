@@ -40,7 +40,7 @@ var app = {
         tweets.hide('fast')
       } else {
         tweets.show('fast');
-        $('html, body').animate({ scrollTop: $(this).offset().top - 165 }, 'fast');
+        $('html, body').animate({ scrollTop: $(this).offset().top - 175 }, 'fast');
       }
     });
   },
@@ -51,17 +51,24 @@ var app = {
 
       var tweets = $.grep($('*[data-target="phrases"]'), function (el) {
         return (new RegExp(phrase).test(el.innerText) === true)
-      })
+      });
 
       $('.day').hide();
       $('.tweet-details').hide();
 
       for (var i = 0; i < tweets.length; i++) {
         $(tweets[i]).closest('.day').show();
+        $(tweets[i]).closest('.day .tweets').show();
         $(tweets[i]).closest('.tweet-details').show();
       }
 
-      $('.messages').show().find('.message').text('Filtering by: "' + phrase + '"');
+      if (tweets.length < 1) {
+        $('.messages').show().find('.message').text('No tweets found with "' + phrase + '" in this date range');
+        $('.messages').addClass('no-phrases');
+      } else {
+        $('.messages').removeClass('no-phrases');
+        $('.messages').show().find('.message').text('Filtering by: "' + phrase + '"');
+      }
     });
   },
 

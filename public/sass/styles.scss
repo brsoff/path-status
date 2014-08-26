@@ -49,7 +49,7 @@ a {
 
 header {
   background-color: $white;
-  height: 138px;
+  height: 160px;
   left: 0;
   position: fixed;
   top: 0;
@@ -58,23 +58,46 @@ header {
   .inner {
     margin: 0 auto;
     max-width: 1140px;
-    padding: 20px 0;
+    padding: 30px 0 20px 0;
     width: 80%;
     .explanation {
       position: relative;
       width: 65%;
       .messages {
-        background: #f7f7f7;
-        border: 1px solid $lightgrey;
-        bottom: -30px;
+        background-color: #f7f7f7;
+        border: 1px solid #bdc3c7;
+        border-radius: 3px;
+        bottom: -50px;
         display: none;
         padding: 4px 10px;
         position: absolute;
-        right: -42px;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        width: 280px;
         z-index: 10000;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        &.no-phrases {
+          background-color: $red;
+          color: $white;
+          width: 400px;
+          .unfilter {
+            color: $white;
+            &:hover {
+              color: $lightgrey;
+            }
+          }
+        }
         .unfilter {
           color: $darkblue;
           cursor: pointer;
+          position: absolute;
+          right: 5px;
+          text-align: right;
+          top: 5px;
           &:hover {
             color: $lightblue;
           }
@@ -94,7 +117,7 @@ header {
   max-width: 1140px;
   width: 80%;
   .wrapper {
-    margin: 40px 0;
+    margin: 60px 0 40px 0;
     @include clearfix;
   }
   .main {
@@ -106,7 +129,7 @@ header {
     background-color: #f7f7f7;
     border: 1px solid $lightgrey;
     border-radius: 3px;
-    padding: 18px 0 20px 0;
+    padding: 30px 0 20px 0;
     position: relative;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -115,6 +138,9 @@ header {
     margin-bottom: 40px;
     position: relative;
     @include clearfix;
+    &:last-child {
+      margin-bottom: 0;
+    }
     h3 {
       display: inline-block;
       font-size: .9em;
@@ -207,7 +233,7 @@ header {
     @include clearfix;
     .fixed {
       position: fixed;
-      top: 135px;
+      top: 160px;
       h2 {
         margin-top: 0;
       }
