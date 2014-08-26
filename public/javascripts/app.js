@@ -26,9 +26,33 @@ var app = {
 
           $('.dummy').empty();
 
+          app.flashTimelineMessage();
+
           app.bind();
         }
       });
+    });
+  },
+
+  showFilterMessage: function (type, phrase) {
+    $('.messages').removeClass('no-phrases');
+
+    if (type === 'no-phrases') {
+      $('.messages').addClass('no-phrases');
+      var text = 'No tweets found with "' + phrase + '" in this date range';
+    } else {
+      var text = 'Filtering by: "' + phrase + '"';
+    }
+
+    $('.messages').show().find('.message').text(text);
+  },
+
+  flashTimelineMessage: function () {
+    $('.messages').removeClass('no-phrases');
+
+    $('.messages').find('.message').text('Timeline updated');
+    $('.messages').fadeIn(200, function () {
+      setTimeout(function () { $('.messages').fadeOut(200); }, 2000);
     });
   },
 
@@ -62,13 +86,9 @@ var app = {
         $(tweets[i]).closest('.tweet-details').show();
       }
 
-      if (tweets.length < 1) {
-        $('.messages').show().find('.message').text('No tweets found with "' + phrase + '" in this date range');
-        $('.messages').addClass('no-phrases');
-      } else {
-        $('.messages').removeClass('no-phrases');
-        $('.messages').show().find('.message').text('Filtering by: "' + phrase + '"');
-      }
+      var type = tweets.length < 1 ? 'no-phrases' : 'phrases';
+
+      app.showFilterMessage(type, phrase);
     });
   },
 

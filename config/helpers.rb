@@ -38,4 +38,8 @@ helpers do
   def node_position_for(node, count)
     node.to_f / count.to_f * 100
   end
+
+  def chop_year_for(date)
+    date.gsub(/\/\d\d$/, '')
+  end
 end

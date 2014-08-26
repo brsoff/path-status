@@ -144,12 +144,13 @@ header .inner p {
   background-color: #f7f7f7;
   border: 1px solid #ebe8e8;
   border-radius: 3px;
-  padding: 30px 0 20px 0;
+  margin-left: 70px;
+  padding: 10px 0 20px 0;
   position: relative;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-/* line 137, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 .inner .day {
   margin-bottom: 40px;
   position: relative;
@@ -167,37 +168,37 @@ header .inner p {
 .inner .day {
   *zoom: 1;
 }
-/* line 141, ../sass/styles.scss */
+/* line 142, ../sass/styles.scss */
 .inner .day:last-child {
   margin-bottom: 0;
 }
-/* line 144, ../sass/styles.scss */
+/* line 145, ../sass/styles.scss */
 .inner .day h3 {
   display: inline-block;
   font-size: .9em;
-  left: -85px;
+  left: -70px;
   margin: 0;
   padding: 0;
   position: absolute;
   top: -2px;
   z-index: 999;
 }
-/* line 154, ../sass/styles.scss */
+/* line 155, ../sass/styles.scss */
 .inner .day .bar {
   background-color: #2980b9;
   cursor: pointer;
   height: 10px;
   position: relative;
 }
-/* line 159, ../sass/styles.scss */
+/* line 160, ../sass/styles.scss */
 .inner .day .bar:hover {
   background-color: #3498db;
 }
-/* line 162, ../sass/styles.scss */
+/* line 163, ../sass/styles.scss */
 .inner .day .bar.weekend {
   background-color: #f1c40f;
 }
-/* line 165, ../sass/styles.scss */
+/* line 166, ../sass/styles.scss */
 .inner .day .bar .node {
   background-color: white;
   border-radius: 50%;
@@ -209,7 +210,7 @@ header .inner p {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-/* line 175, ../sass/styles.scss */
+/* line 176, ../sass/styles.scss */
 .inner .day .bar .node .node-hover {
   background-color: white;
   border: 1px solid black;
@@ -226,7 +227,7 @@ header .inner p {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-/* line 192, ../sass/styles.scss */
+/* line 193, ../sass/styles.scss */
 .inner .day .bar .count {
   background-color: #e74c3c;
   border-radius: 50%;
@@ -244,11 +245,11 @@ header .inner p {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-/* line 208, ../sass/styles.scss */
+/* line 209, ../sass/styles.scss */
 .inner .day .bar .count.no-phrases {
   background-color: #1abc9c;
 }
-/* line 213, ../sass/styles.scss */
+/* line 214, ../sass/styles.scss */
 .inner .day .tweets {
   background-color: white;
   border: 1px solid #2980b9;
@@ -256,19 +257,19 @@ header .inner p {
   padding: 10px;
   z-index: 999;
 }
-/* line 219, ../sass/styles.scss */
+/* line 220, ../sass/styles.scss */
 .inner .day .tweets li {
   margin-bottom: 5px;
 }
-/* line 222, ../sass/styles.scss */
+/* line 223, ../sass/styles.scss */
 .inner .day .tweets .tweet {
   list-style-type: square;
 }
-/* line 224, ../sass/styles.scss */
+/* line 225, ../sass/styles.scss */
 .inner .day .tweets .tweet li {
   margin-bottom: 25px;
 }
-/* line 230, ../sass/styles.scss */
+/* line 231, ../sass/styles.scss */
 .inner .sidebar {
   float: right;
   width: 30%;
@@ -286,53 +287,53 @@ header .inner p {
 .inner .sidebar {
   *zoom: 1;
 }
-/* line 234, ../sass/styles.scss */
+/* line 235, ../sass/styles.scss */
 .inner .sidebar .fixed {
   position: fixed;
   top: 160px;
 }
-/* line 237, ../sass/styles.scss */
+/* line 238, ../sass/styles.scss */
 .inner .sidebar .fixed h2 {
   margin-top: 0;
 }
-/* line 241, ../sass/styles.scss */
+/* line 242, ../sass/styles.scss */
 .inner .sidebar .fixed table td {
   padding-bottom: 3px;
   vertical-align: bottom;
 }
-/* line 244, ../sass/styles.scss */
+/* line 245, ../sass/styles.scss */
 .inner .sidebar .fixed table td.phrase {
   color: #2980b9;
   cursor: pointer;
   font-size: .8em;
 }
-/* line 248, ../sass/styles.scss */
+/* line 249, ../sass/styles.scss */
 .inner .sidebar .fixed table td.phrase:hover {
   color: #3498db;
 }
-/* line 251, ../sass/styles.scss */
+/* line 252, ../sass/styles.scss */
 .inner .sidebar .fixed table td.phrase.total-label {
   color: black;
   cursor: arrow;
   font-size: 1.1em;
   padding-top: 10px;
 }
-/* line 258, ../sass/styles.scss */
+/* line 259, ../sass/styles.scss */
 .inner .sidebar .fixed table td.frequency {
   font-size: .9em;
   font-weight: bold;
   padding-left: 15px;
 }
-/* line 262, ../sass/styles.scss */
+/* line 263, ../sass/styles.scss */
 .inner .sidebar .fixed table td.frequency.total {
   font-size: 1.1em;
 }
-/* line 269, ../sass/styles.scss */
+/* line 270, ../sass/styles.scss */
 .inner .sidebar .stats {
   margin-bottom: 30px;
 }
 
-/* line 275, ../sass/styles.scss */
+/* line 276, ../sass/styles.scss */
 .dummy {
   display: none;
 }

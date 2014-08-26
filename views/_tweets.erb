@@ -1,5 +1,5 @@
 <div class="day">
-  <h3><%= date %></h3>
+  <h3><%= chop_year_for(date) %></h3>
 
   <div class="bar <%= render_date_class_for(date) %>" style="width: <%= render_width_for(tweets, max) %>%;" data-behavior="show-tweets">
     <%= partial :nodes, locals: { count: tweets.size, max: max } %>
