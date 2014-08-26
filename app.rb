@@ -2,7 +2,6 @@ require 'twitter'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
-require 'sinatra/partial'
 
 require_relative 'config/extensions'
 require_relative 'config/helpers'

@@ -9,7 +9,6 @@ gem 'sinatra-activerecord'
 gem 'sinatra-reloader'
 gem 'rake'
 gem 'twitter'
-gem 'sinatra-partial'
 
 group :development, :test do
   gem 'database_cleaner'

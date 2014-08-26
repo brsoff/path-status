@@ -1,4 +1,4 @@
-<li class="tweet-details"><%= tweet.tweeted_at.localtime.strftime('%l:%M%P') %>: <strong>"<span data-target="phrases"><%= tweet.phrases %></span>"</strong>
+<li class="tweet-details" data-position="<%= tweet_counter %>"><%= tweet.tweeted_at.localtime.strftime('%l:%M%P') %>: <strong>"<span data-target="phrases"><%= tweet.phrases %></span>"</strong>
   <ul class="tweet">
     <li>"<%= tweet.tweet_text %>" - <a href='<%= tweet_link_for(tweet.tweet_id)%>' target='_blank'>link</a></li>
   </ul>

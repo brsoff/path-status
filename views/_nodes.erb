@@ -1,5 +1,5 @@
 <% count.times do |i| %>
-  <div class="node" style="left: <%= node_position_for(i, count) %>%;" data-target="node">
+  <div class="node" style="left: <%= node_position_for(i, count) %>%;" data-target="node" data-position="<%= i + 1%>">
     <div class="node-hover"></div>
   </div>
 <% end %>
