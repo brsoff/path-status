@@ -7,7 +7,7 @@
 
 /* line 25, ../sass/styles.scss */
 body {
-  font-family: 'arial';
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: .8em;
 }
 
@@ -16,26 +16,27 @@ h1,
 h2,
 h3,
 p {
+  font-weight: normal;
   margin: 0 0 10px 0;
 }
 
-/* line 37, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 h1 {
-  font-size: 2em;
+  font-size: 2.4em;
   margin-bottom: 5px;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 43, ../sass/styles.scss */
 a {
   color: #2980b9;
   text-decoration: none;
 }
-/* line 45, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 a:hover {
   color: #3498db;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 header {
   background-color: white;
   height: 160px;
@@ -45,24 +46,23 @@ header {
   width: 100%;
   z-index: 9999;
 }
-/* line 58, ../sass/styles.scss */
+/* line 59, ../sass/styles.scss */
 header .inner {
   margin: 0 auto;
   max-width: 1140px;
   padding: 30px 0 20px 0;
   width: 80%;
 }
-/* line 63, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 header .inner .explanation {
   position: relative;
   width: 65%;
 }
-/* line 66, ../sass/styles.scss */
+/* line 67, ../sass/styles.scss */
 header .inner .explanation .messages {
   background-color: #f7f7f7;
-  border: 1px solid #ebe8e8;
   border-bottom: none;
-  bottom: -38px;
+  bottom: -30px;
   display: none;
   padding: 4px 10px;
   position: absolute;
@@ -137,13 +137,13 @@ header .inner p {
 /* line 123, ../sass/styles.scss */
 .inner .feed {
   background-color: #f7f7f7;
-  border: 1px solid #ebe8e8;
   margin-left: 70px;
   padding: 15px 0 20px 0;
   position: relative;
 }
-/* line 130, ../sass/styles.scss */
+/* line 129, ../sass/styles.scss */
 .inner .day {
+  background-color: #F2F0F0;
   margin-bottom: 40px;
   position: relative;
 }
@@ -179,7 +179,7 @@ header .inner p {
 .inner .day .bar {
   background-color: #2980b9;
   cursor: pointer;
-  height: 10px;
+  height: 7px;
   position: relative;
 }
 /* line 152, ../sass/styles.scss */
@@ -195,10 +195,10 @@ header .inner p {
   background-color: white;
   border-radius: 50%;
   border: 2px solid black;
-  height: 16px;
+  height: 12px;
   position: absolute;
   top: -3px;
-  width: 16px;
+  width: 12px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
@@ -215,10 +215,10 @@ header .inner p {
   display: none;
   font-size: .9em;
   height: auto;
-  left: 10px;
+  left: 6px;
   padding: 10px;
   position: absolute;
-  top: 10px;
+  top: 6px;
   width: 300px;
   z-index: 100001;
   -moz-border-radius: 3px;

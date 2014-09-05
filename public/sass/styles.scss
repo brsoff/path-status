@@ -23,7 +23,7 @@ $green: #1abc9c;
 }
 
 body {
-  font-family: 'arial';
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: .8em;
 }
 
@@ -31,11 +31,12 @@ h1,
 h2,
 h3,
 p {
+  font-weight: normal;
   margin: 0 0 10px 0;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.4em;
   margin-bottom: 5px;
 }
 
@@ -65,9 +66,8 @@ header {
       width: 65%;
       .messages {
         background-color: #f7f7f7;
-        border: 1px solid $lightgrey;
         border-bottom: none;
-        bottom: -38px;
+        bottom: -30px;
         display: none;
         padding: 4px 10px;
         position: absolute;
@@ -122,12 +122,12 @@ header {
   }
   .feed {
     background-color: #f7f7f7;
-    border: 1px solid $lightgrey;
     margin-left: 70px;
     padding: 15px 0 20px 0;
     position: relative;
   }
   .day {
+    background-color: #F2F0F0;
     margin-bottom: 40px;
     position: relative;
     @include clearfix;
@@ -147,7 +147,7 @@ header {
     .bar {
       background-color: $darkblue;
       cursor: pointer;
-      height: 10px;
+      height: 7px;
       position: relative;
       &:hover {
         background-color: $lightblue;
@@ -159,10 +159,10 @@ header {
         background-color: $white;
         border-radius: 50%;
         border: 2px solid $black;
-        height: 16px;
+        height: 12px;
         position: absolute;
         top: -3px;
-        width: 16px;
+        width: 12px;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         &.inactive {
@@ -176,10 +176,10 @@ header {
           display: none;
           font-size: .9em;
           height: auto;
-          left: 10px;
+          left: 6px;
           padding: 10px;
           position: absolute;
-          top: 10px;
+          top: 6px;
           width: 300px;
           z-index: 100001;
           -moz-border-radius: 3px;

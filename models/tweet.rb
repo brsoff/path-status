@@ -8,6 +8,7 @@ class Tweet < ActiveRecord::Base
     'signal construction',
     'track condition',
     'track problem',
+    'power problem',
     'delay',
     'cash purchases only',
     'no credit/debit',
