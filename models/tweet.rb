@@ -15,10 +15,6 @@ class Tweet < ActiveRecord::Base
     'police activity',
     'car equipment problem',
     'station closed',
-    'min schedule',
-    'minute schedule',
-    'apologize',
-    'sorry'
   ]
 
   def self.timeline(num_days)
